@@ -45,7 +45,7 @@
                 <!-- Momento 1 -->
                 <div class="momento-card">
                     <div class="momento-image">
-                        <img src="fotos/momentos/borrachaesparrago.jpg" alt="Borracha pero trabajadora">
+                        <img src="fotos/momentos/borrachaesparrago.webp" alt="Borracha pero trabajadora">
                     </div>
                     <div class="momento-content">
                         <h3>Borracha pero trabajadora 🌾</h3>
@@ -57,7 +57,7 @@
                 <!-- Momento 2 -->
                 <div class="momento-card reverse">
                     <div class="momento-image">
-                        <img src="fotos/momentos/dondeesta.jpg" alt="Donde está Alicia">
+                        <img src="fotos/momentos/dondeesta.webp" alt="Donde está Alicia">
                     </div>
                     <div class="momento-content">
                         <h3>¿Dónde está Alicia? 🙈</h3>
@@ -69,7 +69,7 @@
                 <!-- Momento 3 -->
                 <div class="momento-card">
                     <div class="momento-image">
-                        <img src="fotos/momentos/ereslaamigadelahija.jpg" alt="Eres la amiga">
+                        <img src="fotos/momentos/ereslaamigadelahija.webp" alt="Eres la amiga">
                     </div>
                     <div class="momento-content">
                         <h3>¿Tú eres la amiga de la hija de Miguel Ángel? 😅</h3>
@@ -81,7 +81,7 @@
                 <!-- Momento 4 -->
                 <div class="momento-card reverse">
                     <div class="momento-image">
-                        <img src="fotos/momentos/hormiga.jpg" alt="La hormiga atómica">
+                        <img src="fotos/momentos/hormiga.webp" alt="La hormiga atómica">
                     </div>
                     <div class="momento-content">
                         <h3>La hormiga atómica 🐜</h3>
@@ -93,7 +93,7 @@
                 <!-- Momento 5 -->
                 <div class="momento-card">
                     <div class="momento-image">
-                        <img src="fotos/momentos/lacera.jpg" alt="La tortura de las mujeres">
+                        <img src="fotos/momentos/lacera.webp" alt="La tortura de las mujeres">
                     </div>
                     <div class="momento-content">
                         <h3>La tortura de las mujeres 😱</h3>
@@ -105,7 +105,7 @@
                 <!-- Momento 6 -->
                 <div class="momento-card reverse">
                     <div class="momento-image">
-                        <img src="fotos/momentos/Temuerdo.jpg" alt="Te muerdo">
+                        <img src="fotos/momentos/Temuerdo.webp" alt="Te muerdo">
                     </div>
                     <div class="momento-content">
                         <h3>¿Te muerdo? 🦷</h3>
@@ -117,7 +117,7 @@
                 <!-- Momento 7 -->
                 <div class="momento-card">
                     <div class="momento-image">
-                        <img src="fotos/momentos/Yoya.jpg" alt="Yoya">
+                        <img src="fotos/momentos/Yoya.webp" alt="Yoya">
                     </div>
                     <div class="momento-content">
                         <h3>Yo ya... 🤦‍♂️</h3>
