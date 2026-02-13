@@ -72,7 +72,7 @@ personaCards.forEach((card, index) => {
         ease: 'power4.out',
         delay: index * 0.2
     });
-    
+
     // Efecto parallax en las imágenes
     gsap.to(card.querySelector('.persona-image img'), {
         scrollTrigger: {
@@ -149,15 +149,29 @@ gsap.from('.inicio-map', {
 // ===========================
 // ANIMACIÓN HISTORIA - AÑOS
 // ===========================
+
+// Animación del título principal de Historia
+gsap.from('.section-historia .main-title', {
+    scrollTrigger: {
+        trigger: '.section-historia',
+        start: 'top 70%',
+    },
+    duration: 1.5,
+    scale: 0.8,
+    opacity: 0,
+    y: 50,
+    ease: 'power4.out'
+});
+
 const yearSections = document.querySelectorAll('.year-section');
 
 yearSections.forEach((yearSection, index) => {
-    
+
     // Animación del header del año
     const yearHeader = yearSection.querySelector('.year-header');
     const yearNumber = yearSection.querySelector('.year-number');
     const yearDescription = yearSection.querySelector('.year-description');
-    
+
     // Número del año con efecto dramático
     gsap.from(yearNumber, {
         scrollTrigger: {
@@ -172,7 +186,7 @@ yearSections.forEach((yearSection, index) => {
         rotation: -10,
         ease: 'elastic.out(1, 0.6)'
     });
-    
+
     // Descripción del año
     gsap.from(yearDescription, {
         scrollTrigger: {
@@ -185,7 +199,33 @@ yearSections.forEach((yearSection, index) => {
         ease: 'power3.out',
         delay: 0.3
     });
-    
+
+    // Efecto de desaparición del header cuando aparecen las tarjetas
+    const firstMonthCard = yearSection.querySelector('.month-card');
+    if (firstMonthCard) {
+        ScrollTrigger.create({
+            trigger: firstMonthCard,
+            start: 'top 35%', // Ajustado para que el header permanezca visible más tiempo
+            end: 'top 15%',
+            onEnter: () => {
+                gsap.to(yearHeader, {
+                    opacity: 0,
+                    y: -50,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            },
+            onLeaveBack: () => {
+                gsap.to(yearHeader, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            }
+        });
+    }
+
     // Efecto de pin en la sección del año
     ScrollTrigger.create({
         trigger: yearSection,
@@ -222,16 +262,16 @@ yearSections.forEach((yearSection, index) => {
             });
         }
     });
-    
+
     // Animación de las tarjetas de meses
     const monthCards = yearSection.querySelectorAll('.month-card');
-    
+
     monthCards.forEach((card, cardIndex) => {
-        // Animación de entrada
+        // Animación de entrada con trigger ajustado
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 85%',
+                start: 'top 98%', // Ajustado a 98% para asegurar que la última tarjeta se vea
             },
             duration: 1,
             y: 80,
@@ -241,7 +281,7 @@ yearSections.forEach((yearSection, index) => {
             ease: 'back.out(1.7)',
             delay: (cardIndex % 3) * 0.15
         });
-        
+
         // Efecto parallax en las imágenes
         const cardImage = card.querySelector('.month-image img');
         if (cardImage) {
@@ -256,7 +296,7 @@ yearSections.forEach((yearSection, index) => {
                 ease: 'none'
             });
         }
-        
+
         // Animación del título del mes
         const monthTitle = card.querySelector('.month-content h3');
         gsap.from(monthTitle, {
@@ -270,7 +310,7 @@ yearSections.forEach((yearSection, index) => {
             ease: 'power2.out',
             delay: 0.3
         });
-        
+
         // Animación del contenido
         const monthText = card.querySelector('.month-content p');
         gsap.from(monthText, {
@@ -284,23 +324,8 @@ yearSections.forEach((yearSection, index) => {
             ease: 'power2.out',
             delay: 0.5
         });
-        
-        // Hover effect mejorado con GSAP
-        card.addEventListener('mouseenter', () => {
-            gsap.to(card, {
-                scale: 1.05,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                scale: 1,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
-        });
+
+        // Eventos de mouse eliminados - solo se usa hover CSS
     });
 });
 
@@ -321,7 +346,7 @@ if (highlightCard) {
         rotation: 360,
         ease: 'elastic.out(1, 0.5)'
     });
-    
+
     // Pulso continuo
     gsap.to(highlightCard, {
         scale: 1.03,
@@ -330,7 +355,7 @@ if (highlightCard) {
         yoyo: true,
         ease: 'sine.inOut'
     });
-    
+
     // Animación del corazón
     const heartIcon = highlightCard.querySelector('.heart-icon');
     if (heartIcon) {
@@ -364,7 +389,7 @@ gsap.from('footer .footer-content', {
 function createFloatingHearts() {
     const container = document.body;
     const heartSymbols = ['❤', '💕', '💖', '💗', '💓', '💝'];
-    
+
     setInterval(() => {
         const heart = document.createElement('div');
         heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
@@ -375,9 +400,9 @@ function createFloatingHearts() {
         heart.style.opacity = '0';
         heart.style.zIndex = '999';
         heart.style.pointerEvents = 'none';
-        
+
         container.appendChild(heart);
-        
+
         gsap.to(heart, {
             y: -window.innerHeight - 100,
             x: (Math.random() - 0.5) * 100,
@@ -388,13 +413,13 @@ function createFloatingHearts() {
                 heart.remove();
             }
         });
-        
+
         gsap.to(heart, {
             opacity: 0,
             duration: 1,
             delay: Math.random() * 2 + 3
         });
-        
+
     }, 3000);
 }
 
@@ -436,9 +461,9 @@ document.addEventListener('mousemove', (e) => {
         heart.style.pointerEvents = 'none';
         heart.style.zIndex = '9999';
         heart.style.color = '#ff6b9d';
-        
+
         document.body.appendChild(heart);
-        
+
         gsap.to(heart, {
             y: -50,
             opacity: 0,
@@ -485,10 +510,10 @@ document.querySelectorAll('.month-card').forEach(card => {
         heart.style.pointerEvents = 'none';
         heart.style.zIndex = '1000';
         heart.style.color = '#ff6b9d';
-        
+
         card.style.position = 'relative';
         card.appendChild(heart);
-        
+
         gsap.to(heart, {
             y: -100,
             scale: 2,
