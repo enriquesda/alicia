@@ -384,7 +384,8 @@ section {
 
 .persona-image {
     position: relative;
-    height: 400px;
+    height: 550px;
+    /* Aumentado de 400px a 550px para mostrar las imágenes completas */
     overflow: hidden;
 }
 
@@ -407,7 +408,10 @@ section {
 .persona-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    /* Cambiado de cover a contain para mostrar la imagen completa */
+    background: white;
+    /* Fondo blanco para las áreas vacías */
     transition: var(--transition-smooth);
 }
 
@@ -631,7 +635,8 @@ section {
 
 .month-image {
     position: relative;
-    height: 250px;
+    height: 320px;
+    /* Aumentado de 250px a 320px para mejor visualización */
     overflow: hidden;
     background: var(--gradient-romantic);
 }
@@ -799,11 +804,13 @@ footer {
     }
 
     .month-image {
-        height: 200px;
+        height: 280px;
+        /* Ajustado para móviles */
     }
 
     .persona-image {
-        height: 300px;
+        height: 450px;
+        /* Ajustado para mostrar imágenes completas en móviles */
     }
 }
 

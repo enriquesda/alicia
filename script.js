@@ -4,6 +4,15 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // ===========================
+// HELPER PARA TRIGGERS RESPONSIVE
+// ===========================
+function getTriggerStart(desktopValue, mobileValue) {
+    const isMobile = window.innerWidth <= 768;
+    return isMobile ? mobileValue : desktopValue;
+}
+
+
+// ===========================
 // NAVEGACIÓN CON SCROLL
 // ===========================
 window.addEventListener('scroll', () => {
@@ -48,7 +57,7 @@ gsap.from('.scroll-indicator', {
 gsap.from('.intro-text p', {
     scrollTrigger: {
         trigger: '.section-nosotros',
-        start: 'top 80%',
+        start: getTriggerStart('top 80%', 'top 85%'),
     },
     duration: 1,
     y: 50,
@@ -63,7 +72,7 @@ personaCards.forEach((card, index) => {
     gsap.from(card, {
         scrollTrigger: {
             trigger: card,
-            start: 'top 85%',
+            start: getTriggerStart('top 85%', 'top 90%'),
         },
         duration: 1.2,
         y: 100,
@@ -89,7 +98,7 @@ personaCards.forEach((card, index) => {
 gsap.from('.subtitle-intro', {
     scrollTrigger: {
         trigger: '.subtitle-intro',
-        start: 'top 85%',
+        start: getTriggerStart('top 85%', 'top 90%'),
     },
     duration: 1.5,
     scale: 0.8,
@@ -103,7 +112,7 @@ gsap.from('.subtitle-intro', {
 gsap.from('.section-inicio .section-title', {
     scrollTrigger: {
         trigger: '.section-inicio',
-        start: 'top 75%',
+        start: getTriggerStart('top 75%', 'top 80%'),
     },
     duration: 1.2,
     x: -100,
@@ -114,7 +123,7 @@ gsap.from('.section-inicio .section-title', {
 gsap.from('.inicio-image', {
     scrollTrigger: {
         trigger: '.inicio-image',
-        start: 'top 80%',
+        start: getTriggerStart('top 80%', 'top 85%'),
     },
     duration: 1.5,
     scale: 0.8,
@@ -125,7 +134,7 @@ gsap.from('.inicio-image', {
 gsap.from('.inicio-text', {
     scrollTrigger: {
         trigger: '.inicio-text',
-        start: 'top 80%',
+        start: getTriggerStart('top 80%', 'top 85%'),
     },
     duration: 1.2,
     x: -80,
@@ -137,7 +146,7 @@ gsap.from('.inicio-text', {
 gsap.from('.inicio-map', {
     scrollTrigger: {
         trigger: '.inicio-map',
-        start: 'top 80%',
+        start: getTriggerStart('top 80%', 'top 85%'),
     },
     duration: 1.2,
     x: 80,
@@ -154,7 +163,7 @@ gsap.from('.inicio-map', {
 gsap.from('.section-historia .main-title', {
     scrollTrigger: {
         trigger: '.section-historia',
-        start: 'top 70%',
+        start: getTriggerStart('top 70%', 'top 75%'),
     },
     duration: 1.5,
     scale: 0.8,
@@ -176,7 +185,7 @@ yearSections.forEach((yearSection, index) => {
     gsap.from(yearNumber, {
         scrollTrigger: {
             trigger: yearHeader,
-            start: 'top 70%',
+            start: getTriggerStart('top 70%', 'top 75%'),
             end: 'top 30%',
             toggleActions: 'play none none reverse',
         },
@@ -191,7 +200,7 @@ yearSections.forEach((yearSection, index) => {
     gsap.from(yearDescription, {
         scrollTrigger: {
             trigger: yearHeader,
-            start: 'top 70%',
+            start: getTriggerStart('top 70%', 'top 75%'),
         },
         duration: 1.2,
         x: 100,
@@ -205,7 +214,7 @@ yearSections.forEach((yearSection, index) => {
     if (firstMonthCard) {
         ScrollTrigger.create({
             trigger: firstMonthCard,
-            start: 'top 35%', // Ajustado para que el header permanezca visible más tiempo
+            start: getTriggerStart('top 35%', 'top 40%'), // Ajustado para que el header permanezca visible más tiempo
             end: 'top 15%',
             onEnter: () => {
                 gsap.to(yearHeader, {
@@ -271,7 +280,7 @@ yearSections.forEach((yearSection, index) => {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 98%', // Ajustado a 98% para asegurar que la última tarjeta se vea
+                start: getTriggerStart('top 98%', 'top 99%'), // Crítico: móviles necesitan 99% para que la última tarjeta se vea
             },
             duration: 1,
             y: 80,
@@ -282,27 +291,14 @@ yearSections.forEach((yearSection, index) => {
             delay: (cardIndex % 3) * 0.15
         });
 
-        // Efecto parallax en las imágenes
-        const cardImage = card.querySelector('.month-image img');
-        if (cardImage) {
-            gsap.to(cardImage, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1
-                },
-                y: -30,
-                ease: 'none'
-            });
-        }
+        // Efecto parallax eliminado - las imágenes permanecen estáticas
 
         // Animación del título del mes
         const monthTitle = card.querySelector('.month-content h3');
         gsap.from(monthTitle, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 80%',
+                start: getTriggerStart('top 80%', 'top 85%'),
             },
             duration: 0.8,
             x: -30,
@@ -316,7 +312,7 @@ yearSections.forEach((yearSection, index) => {
         gsap.from(monthText, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 80%',
+                start: getTriggerStart('top 80%', 'top 85%'),
             },
             duration: 0.8,
             y: 20,
@@ -338,7 +334,7 @@ if (highlightCard) {
     gsap.from(highlightCard, {
         scrollTrigger: {
             trigger: highlightCard,
-            start: 'top 85%',
+            start: getTriggerStart('top 85%', 'top 90%'),
         },
         duration: 1.5,
         scale: 0.5,
@@ -375,7 +371,7 @@ if (highlightCard) {
 gsap.from('footer .footer-content', {
     scrollTrigger: {
         trigger: 'footer',
-        start: 'top 90%',
+        start: getTriggerStart('top 90%', 'top 95%'),
     },
     duration: 1.2,
     y: 50,
@@ -492,6 +488,17 @@ window.addEventListener('load', () => {
 // ===========================
 window.addEventListener('load', () => {
     ScrollTrigger.refresh();
+});
+
+// ===========================
+// REFRESH EN CAMBIO DE TAMAÑO
+// ===========================
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 250);
 });
 
 // ===========================
