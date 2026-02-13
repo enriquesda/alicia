@@ -1,0 +1,293 @@
+/* ===========================
+   ESTILOS ESPECÍFICOS DE VIAJES
+   =========================== */
+
+/* Hero Viajes */
+.hero-viajes {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-romantic);
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-viajes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0.3;
+}
+
+/* Sección Viajes */
+.section-viajes {
+    padding: 4rem 0;
+    /* Reducido de 6rem a 4rem */
+    background: linear-gradient(180deg, var(--cream) 0%, var(--light-pink) 50%, var(--cream) 100%);
+}
+
+/* Tarjeta de Viaje */
+.viaje-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 3rem;
+    /* Reducido de 5rem a 3rem */
+    transition: var(--transition-smooth);
+}
+
+.viaje-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.viaje-header {
+    padding: 0.5rem 1rem;
+    /* Reducido padding vertical de 2rem a 1.5rem */
+    background: var(--gradient-soft);
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    overflow: hidden;
+}
+
+.viaje-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.85), rgba(255, 218, 224, 0.85));
+    z-index: 1;
+}
+
+.viaje-header h2,
+.viaje-header p {
+    position: relative;
+    z-index: 2;
+}
+
+.viaje-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 0.5rem;
+    /* Reducido de 1rem a 0.5rem */
+    background: var(--gradient-love);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.viaje-description {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0;
+    /* Eliminar márgenes por defecto */
+}
+
+/* Carrusel */
+.carousel-container {
+    padding: 1.5rem 2rem 2rem 2rem;
+    /* Reducido padding superior de 2rem a 1.5rem */
+    background: white;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    /* Aumentado de 600px a 700px para mostrar imágenes más completas */
+    overflow: hidden;
+}
+
+.carousel-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    border-radius: 20px;
+}
+
+.carousel-images img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Botones del Carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* Indicadores del Carrusel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 2px solid white;
+}
+
+.carousel-indicator.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+}
+
+.carousel-indicator:hover {
+    background: var(--accent-color);
+}
+
+/* Contador de Imágenes */
+.carousel-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10;
+    font-weight: 500;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 1024px) {
+    .carousel-images {
+        height: 500px;
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-viajes {
+        padding: 4rem 0;
+    }
+
+    .viaje-card {
+        margin-bottom: 3rem;
+    }
+
+    .viaje-header {
+        padding: 2rem;
+    }
+
+    .carousel-container {
+        padding: 1.5rem;
+    }
+
+    .carousel-images {
+        height: 400px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-images {
+        height: 300px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .viaje-header h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nuestros Viajes ✈️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="viajes.css">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
             <div class="nav-container">
                 <div class="logo">E & A</div>
                 <ul class="nav-links">
-                    <li><a href="#nosotros">Historia</a></li>
+                    <li><a href="index.html">Historia</a></li>
                     <li><a href="viajes.html">Viajes</a></li>
                     <li><a href="motivos.html">Te quiero</a></li>
                     <li><a href="momentosHumildes.html">Momentos humildes</a></li>
@@ -25,57 +27,191 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <section>
-            <h1>Si hay algo que nos gusta es viajar y aqui un resumen de los viajes que hemos hecho</h1>
-            <div class="container">
-                <h3>Italia</h3>
-                <p>Fue mi primer viaje pero sera el que mas recordare toda mi vida.</p>
-                <img src="fotos/italia.webp" alt="">
-                <div>
+        <!-- Hero Section -->
+        <section class="hero-viajes">
+            <div class="hero-content">
+                <h1 class="hero-title">Nuestros Viajes</h1>
+                <p class="hero-subtitle">Si hay algo que nos gusta es viajar y aquí un resumen de los lugares que hemos
+                    explorado juntos</p>
+            </div>
+        </section>
 
+        <!-- Sección de Viajes -->
+        <section class="section-viajes">
+            <div class="container">
+
+                <!-- Italia / Venecia -->
+                <div class="viaje-card">
+                    <div class="viaje-header" style="background-image: url('fotos/italia.webp');">
+                        <h2>Italia 🇮🇹</h2>
+                        <p class="viaje-description">Fue mi primer viaje pero será el que más recordaré toda mi vida.
+                        </p>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel" data-carousel="italia">
+                            <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                            <div class="carousel-images">
+                                <img src="fotos/venecia/20220902_102502.jpg" alt="Italia 1" class="active">
+                                <img src="fotos/venecia/20220902_102548.jpg" alt="Italia 2">
+                                <img src="fotos/venecia/20220902_103508.jpg" alt="Italia 3">
+                                <img src="fotos/venecia/20220902_172700.jpg" alt="Italia 4">
+                                <img src="fotos/venecia/20220902_180851.jpg" alt="Italia 5">
+                                <img src="fotos/venecia/20220902_200723.jpg" alt="Italia 6">
+                                <img src="fotos/venecia/20220903_174810.jpg" alt="Italia 7">
+                                <img src="fotos/venecia/20220903_175450.jpg" alt="Italia 8">
+                                <img src="fotos/venecia/20220903_195810.jpg" alt="Italia 9">
+                                <img src="fotos/venecia/20220904_121242.jpg" alt="Italia 10">
+                                <img src="fotos/venecia/20220904_134240.jpg" alt="Italia 11">
+                                <img src="fotos/venecia/20220904_174313.jpg" alt="Italia 12">
+                                <img src="fotos/venecia/20220905_105604.jpg" alt="Italia 13">
+                                <img src="fotos/venecia/20220905_110134.jpg" alt="Italia 14">
+                                <img src="fotos/venecia/20220905_114801.jpg" alt="Italia 15">
+                                <img src="fotos/venecia/20220905_114856.jpg" alt="Italia 16">
+                                <img src="fotos/venecia/20220905_122026.jpg" alt="Italia 17">
+                            </div>
+                            <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-            <div class="container">
-                <h3>Londres</h3>
-                <p>Momentos inolvidables</p>
-                <img src="fotos/londres.webp" alt="">
-                <div>
-
+                <!-- Londres -->
+                <div class="viaje-card">
+                    <div class="viaje-header" style="background-image: url('fotos/londres.webp');">
+                        <h2>Londres 🇬🇧</h2>
+                        <p class="viaje-description">Momentos inolvidables en la capital del Reino Unido.</p>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel" data-carousel="londres">
+                            <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                            <div class="carousel-images">
+                                <img src="fotos/londres/20230201_121147.jpg" alt="Londres 1" class="active">
+                                <img src="fotos/londres/20230202_085641.jpg" alt="Londres 2">
+                                <img src="fotos/londres/20230202_101456.jpg" alt="Londres 3">
+                                <img src="fotos/londres/20230202_152437.jpg" alt="Londres 4">
+                                <img src="fotos/londres/20230204_102844.jpg" alt="Londres 5">
+                                <img src="fotos/londres/20230204_103538.jpg" alt="Londres 6">
+                                <img src="fotos/londres/20230206_125325.jpg" alt="Londres 7">
+                                <img src="fotos/londres/20230207_154605.jpg" alt="Londres 8">
+                            </div>
+                            <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-            <div class="container">
-                <h3>Budapest</h3>
-                <p>Momentos inolvidables</p>
-                <img src="fotos/hungria.webp" alt="">
-                <div>
-
+                <!-- Budapest -->
+                <div class="viaje-card">
+                    <div class="viaje-header" style="background-image: url('fotos/hungria.webp');">
+                        <h2>Budapest 🇭🇺</h2>
+                        <p class="viaje-description">La perla del Danubio, una ciudad que nos enamoró.</p>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel" data-carousel="budapest">
+                            <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                            <div class="carousel-images">
+                                <img src="fotos/budapest/IMG_20240107_153838420.jpg" alt="Budapest 1" class="active">
+                                <img src="fotos/budapest/IMG_20240108_123602383.jpg" alt="Budapest 2">
+                                <img src="fotos/budapest/IMG_20240108_124158291.jpg" alt="Budapest 3">
+                                <img src="fotos/budapest/IMG_20240108_124302170.jpg" alt="Budapest 4">
+                                <img src="fotos/budapest/IMG_20240109_190858834.jpg" alt="Budapest 5">
+                                <img src="fotos/budapest/IMG_20240109_212250241.jpg" alt="Budapest 6">
+                                <img src="fotos/budapest/IMG_20240110_090655285.jpg" alt="Budapest 7">
+                                <img src="fotos/budapest/IMG_20240110_110317020.jpg" alt="Budapest 8">
+                                <img src="fotos/budapest/IMG_20240110_162247465.jpg" alt="Budapest 9">
+                                <img src="fotos/budapest/IMG_20240110_162438820.jpg" alt="Budapest 10">
+                                <img src="fotos/budapest/IMG_20240110_182621116.jpg" alt="Budapest 11">
+                                <img src="fotos/budapest/IMG_20240110_205848710.jpg" alt="Budapest 12">
+                                <img src="fotos/budapest/IMG_20240110_212337187.jpg" alt="Budapest 13">
+                            </div>
+                            <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-            <div class="container">
-                <h3>Grecia</h3>
-                <p>Momentos inolvidables</p>
-                <img src="fotos/grecia.jpg" alt="">
-                <div>
-                    <!-- aqui los comentarios -->
+                <!-- Grecia -->
+                <div class="viaje-card">
+                    <div class="viaje-header" style="background-image: url('fotos/grecia.jpg');">
+                        <h2>Grecia 🇬🇷</h2>
+                        <p class="viaje-description">Atenas y sus maravillas, un sueño hecho realidad.</p>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel" data-carousel="grecia">
+                            <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                            <div class="carousel-images">
+                                <img src="fotos/grecia/20240828_123219.jpg" alt="Grecia 1" class="active">
+                                <img src="fotos/grecia/20240828_133344.jpg" alt="Grecia 2">
+                                <img src="fotos/grecia/20240828_154709.jpg" alt="Grecia 3">
+                                <img src="fotos/grecia/20240828_173933.jpg" alt="Grecia 4">
+                                <img src="fotos/grecia/20240828_185438.jpg" alt="Grecia 5">
+                                <img src="fotos/grecia/20240829_113030.jpg" alt="Grecia 6">
+                                <img src="fotos/grecia/20240829_184620.jpg" alt="Grecia 7">
+                                <img src="fotos/grecia/20240830_164604.jpg" alt="Grecia 8">
+                                <img src="fotos/grecia/20240830_182900.jpg" alt="Grecia 9">
+                                <img src="fotos/grecia/20240831_173250.jpg" alt="Grecia 10">
+                                <img src="fotos/grecia/20240831_195212.jpg" alt="Grecia 11">
+                                <img src="fotos/grecia/20240831_220814.jpg" alt="Grecia 12">
+                                <img src="fotos/grecia/20240901_115704.jpg" alt="Grecia 13">
+                                <img src="fotos/grecia/20240901_163744.jpg" alt="Grecia 14">
+                                <img src="fotos/grecia/20240901_184804.jpg" alt="Grecia 15">
+                                <img src="fotos/grecia/20240902_082902.jpg" alt="Grecia 16">
+                            </div>
+                            <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-            <div class="container">
-                <h3>Portugal</h3>
-                <p>Momentos inolvidables</p>
-                <img src="fotos/portugal.png" alt="">
-                <div>
-
+                <!-- Portugal -->
+                <div class="viaje-card">
+                    <div class="viaje-header" style="background-image: url('fotos/portugal.png');">
+                        <h2>Portugal 🇵🇹</h2>
+                        <p class="viaje-description">Oporto y sus encantos, nuestra pequeña escapada.</p>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel" data-carousel="portugal">
+                            <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                            <div class="carousel-images">
+                                <img src="fotos/oporto/20241226_123636.jpg" alt="Portugal 1" class="active">
+                                <img src="fotos/oporto/20241226_145059.jpg" alt="Portugal 2">
+                                <img src="fotos/oporto/20241226_153211.jpg" alt="Portugal 3">
+                                <img src="fotos/oporto/20241226_161401.jpg" alt="Portugal 4">
+                                <img src="fotos/oporto/20241226_161950.jpg" alt="Portugal 5">
+                                <img src="fotos/oporto/20241226_162312.jpg" alt="Portugal 6">
+                                <img src="fotos/oporto/20241227_110852.jpg" alt="Portugal 7">
+                                <img src="fotos/oporto/20241227_111545.jpg" alt="Portugal 8">
+                                <img src="fotos/oporto/20241227_125849.jpg" alt="Portugal 9">
+                                <img src="fotos/oporto/20241227_133735.jpg" alt="Portugal 10">
+                                <img src="fotos/oporto/20241227_164607.jpg" alt="Portugal 11">
+                                <img src="fotos/oporto/20241227_170150.jpg" alt="Portugal 12">
+                                <img src="fotos/oporto/20241228_165214.jpg" alt="Portugal 13">
+                                <img src="fotos/oporto/20241228_211626.jpg" alt="Portugal 14">
+                                <img src="fotos/oporto/20241229_102233.jpg" alt="Portugal 15">
+                                <img src="fotos/oporto/20241229_171802.jpg" alt="Portugal 16">
+                            </div>
+                            <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </section>
-
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Con todo mi amor ❤️</p>
+            <p class="footer-date">Nuestros Viajes</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="viajes.js"></script>
 </body>
 
 </html>
