@@ -635,8 +635,8 @@ section {
 
 .month-image {
     position: relative;
-    height: 320px;
-    /* Aumentado de 250px a 320px para mejor visualización */
+    height: 400px;
+    /* Aumentado de 320px a 400px para mejor visualización */
     overflow: hidden;
     background: var(--gradient-romantic);
 }
@@ -804,8 +804,8 @@ footer {
     }
 
     .month-image {
-        height: 280px;
-        /* Ajustado para móviles */
+        height: 350px;
+        /* Aumentado de 280px a 350px para móviles */
     }
 
     .persona-image {

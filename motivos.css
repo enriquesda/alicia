@@ -1,0 +1,167 @@
+/* ===========================
+   ESTILOS ESPECÍFICOS MOTIVOS
+   =========================== */
+
+/* Hero Motivos */
+.hero-motivos {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-motivos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0.3;
+}
+
+/* Sección Motivos */
+.section-motivos {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--light-pink) 50%, var(--cream) 100%);
+}
+
+/* Tarjeta de Motivo */
+.motivo-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    background: white;
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 2.5rem;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.motivo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: var(--gradient-soft);
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: translate(50%, -50%);
+    transition: var(--transition-smooth);
+}
+
+.motivo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.motivo-card:hover::before {
+    transform: translate(50%, -50%) scale(1.5);
+    opacity: 0.7;
+}
+
+/* Número del Motivo */
+.motivo-numero {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-love);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 2;
+}
+
+/* Contenido del Motivo */
+.motivo-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.motivo-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    margin-bottom: 1rem;
+    background: var(--gradient-love);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.motivo-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-light);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .section-motivos {
+        padding: 3rem 0;
+    }
+
+    .motivo-card {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .motivo-numero {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        align-self: center;
+    }
+
+    .motivo-content h3 {
+        text-align: center;
+    }
+
+    .motivo-card::before {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .motivo-card {
+        padding: 1.5rem;
+    }
+
+    .motivo-numero {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
+    .motivo-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .motivo-content p {
+        font-size: 1rem;
+    }
+}
